@@ -1,3 +1,6 @@
+let flecheGaucheHMTL = document.querySelector(".arrow_left");
+let flecheDroiteHTML = document.querySelector(".arrow_right");
+
 const slides = [
 	{
 		"image":"slide1.jpg",
@@ -16,3 +19,12 @@ const slides = [
 		"tagLine":"Autocollants <span>avec découpe laser sur mesure</span>"
 	}
 ]
+
+flecheGaucheHMTL.addEventListener("click", () => {
+	console.log("Flèche Gauche Séléctionner")
+})
+
+
+flecheDroiteHTML.addEventListener("click", () => {
+	console.log("Flèche Droite Séléctionner")
+})
