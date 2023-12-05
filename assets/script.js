@@ -1,6 +1,9 @@
 let flecheGaucheHMTL = document.querySelector(".arrow_left");
 let flecheDroiteHTML = document.querySelector(".arrow_right");
 let dotsHTML = document.querySelector(".dots");
+let bannerImgHTML = document.querySelector(".banner-img");
+let tilteHTML = document.querySelector(".title");
+
 
 const slides = [
 	{
@@ -35,10 +38,26 @@ allDotsHTML[currentIndex].classList.add("dot_selected");
 
 
 flecheGaucheHMTL.addEventListener("click", () => {
-	console.log("Flèche Gauche Séléctionner")
-})
+let previousIndex=currentIndex
+currentIndex --;
+
+allDotsHTML[currentIndex].classList.add("dot_selected");
+allDotsHTML[previousIndex].classList.remove("dot_selected");
+
+bannerImgHTML.setAttribute("src", "./assets/images/slideshow/" + slides[currentIndex].image)
+tilteHTML.innerHTML = slides[currentIndex].tagLine
+
+});
 
 
 flecheDroiteHTML.addEventListener("click", () => {
-	console.log("Flèche Droite Séléctionner")
-})
+let previousIndex=currentIndex
+currentIndex++;
+
+allDotsHTML[currentIndex].classList.add("dot_selected");
+allDotsHTML[previousIndex].classList.remove("dot_selected");
+
+bannerImgHTML.setAttribute("src", "./assets/images/slideshow/" + slides[currentIndex].image)
+tilteHTML.innerHTML = slides[currentIndex].tagLine
+
+});
