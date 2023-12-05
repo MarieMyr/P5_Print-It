@@ -41,11 +41,15 @@ flecheGaucheHMTL.addEventListener("click", () => {
 let previousIndex=currentIndex
 currentIndex --;
 
-allDotsHTML[currentIndex].classList.add("dot_selected");
-allDotsHTML[previousIndex].classList.remove("dot_selected");
+	if (currentIndex < 0) {
+		currentIndex = slides.length -1 ;
+  	}
 
-bannerImgHTML.setAttribute("src", "./assets/images/slideshow/" + slides[currentIndex].image)
-tilteHTML.innerHTML = slides[currentIndex].tagLine
+	allDotsHTML[currentIndex].classList.add("dot_selected");
+	allDotsHTML[previousIndex].classList.remove("dot_selected");
+
+	bannerImgHTML.setAttribute("src", "./assets/images/slideshow/" + slides[currentIndex].image)
+	tilteHTML.innerHTML = slides[currentIndex].tagLine
 
 });
 
@@ -54,10 +58,14 @@ flecheDroiteHTML.addEventListener("click", () => {
 let previousIndex=currentIndex
 currentIndex++;
 
-allDotsHTML[currentIndex].classList.add("dot_selected");
-allDotsHTML[previousIndex].classList.remove("dot_selected");
+	if (currentIndex > slides.length -1 ) {
+		currentIndex = 0;
+  	}
 
-bannerImgHTML.setAttribute("src", "./assets/images/slideshow/" + slides[currentIndex].image)
-tilteHTML.innerHTML = slides[currentIndex].tagLine
+	allDotsHTML[currentIndex].classList.add("dot_selected");
+	allDotsHTML[previousIndex].classList.remove("dot_selected");
+
+	bannerImgHTML.setAttribute("src", "./assets/images/slideshow/" + slides[currentIndex].image)
+	tilteHTML.innerHTML = slides[currentIndex].tagLine
 
 });
